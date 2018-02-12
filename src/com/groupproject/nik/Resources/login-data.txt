@@ -1,0 +1,1 @@
+root, password, rootFirstname, rootLastname, 0, false

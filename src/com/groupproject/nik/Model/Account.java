@@ -8,13 +8,15 @@ package com.groupproject.nik.Model;
 public class Account {
     private String firstName;
     private String lastName;
+    private String username;
     private String password;
     private int age;
     private boolean isAdmin; // specifies if the user has admin access
 
-    public Account(String firstName, String lastName, String password, int age, boolean isAdmin){
+    public Account(String firstName, String lastName, String username, String password, int age, boolean isAdmin){
         this.firstName = firstName;
         this.lastName = lastName;
+        this.username = username;
         this.password = password;
         this.age = age;
         this.isAdmin = isAdmin;
@@ -27,6 +29,10 @@ public class Account {
     // last name
     public String getLastName() {return lastName;}
     public void setLastName(String lastName) {this.lastName = lastName;}
+
+    // username
+    public String getUsername() {return username;}
+    public void setUsername(String username) {this.username = username;}
 
     // password
     public String getPassword() {return password;}

@@ -58,7 +58,7 @@ public class Main extends Application {
         centerLayout.getChildren().setAll(usernameField, usernameLabel, passwordField, passwordLabel, login); // adds all of the objects to the GridPane
         layout.setCenter(centerLayout); // adds the layout to the BorderPAne
 
-        // Scene
+        // Scene -- creates a scene and specifies its WIDTH and HEIGHT (these two constants can found at the top of this file, as a member variable)
         Scene mainScene = new Scene(layout, WIDTH, HEIGHT);
         mainScene.getStylesheets().add("/com/groupproject/nik/Resources/master.css");
 
