@@ -1,5 +1,10 @@
 package com.groupproject.nik.Model;
 
+/*
+ * Description: This class is for holding information on a product; name, weight, price, description, volume, and even location
+ * Created: 02/11/2018
+ */
+
 public class ProductDetails {
     private String name;
     private double weight; // we'll have to decide what unit this is measured in

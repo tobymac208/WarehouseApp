@@ -10,7 +10,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-/**
+/*
  * Authors: Nik, Scott, Joe
  * Date created: 02/11/2018
  * Description:

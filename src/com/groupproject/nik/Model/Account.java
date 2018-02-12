@@ -1,5 +1,10 @@
 package com.groupproject.nik.Model;
 
+/*
+ * Description: This class is for holding information on Account information for a user; name, password, age, and if they are an admin or not
+ * Created: 02/11/2018
+ */
+
 public class Account {
     private String firstName;
     private String lastName;

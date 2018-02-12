@@ -1,5 +1,10 @@
 package com.groupproject.nik.Model;
 
+/*
+ * Description: This class is for holding information of which aisle, shelf, and tier (level) an item is located
+ * Created: 02/11/2018
+ */
+
 public class Location {
     private int aisle;
     private int shelf;

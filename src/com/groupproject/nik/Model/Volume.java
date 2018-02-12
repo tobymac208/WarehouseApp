@@ -1,5 +1,10 @@
 package com.groupproject.nik.Model;
 
+/*
+ * Description: This class is for holding information on what the volume of an item is
+ * Created: 02/11/2018
+ */
+
 public class Volume {
     private double length;
     private double depth;
