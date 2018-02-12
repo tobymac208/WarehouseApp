@@ -1,6 +1,7 @@
 package com.groupproject.group;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -31,6 +32,7 @@ public class Main extends Application {
         // TODO: Place objects here
         // NOTE: All objects placed here are for a skeleton setup, and should be modified for a better user experience
 
+        // CENTER objects
         // Username objects
         Label usernameLabel = new Label("Username:");
         TextField usernameField = new TextField();
@@ -48,6 +50,7 @@ public class Main extends Application {
         BorderPane layout = new BorderPane();
         // CENTER
         GridPane centerLayout = new GridPane();
+        centerLayout.setAlignment(Pos.CENTER);
         centerLayout.setHgap(10); // sets the horizontal gap
         centerLayout.setVgap(10); // sets the vertical gap
         GridPane.setConstraints(usernameLabel, 0, 0); // first row, first column
