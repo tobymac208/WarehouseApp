@@ -21,7 +21,7 @@ public class AccountsList {
 
     /** Allows someone to add to this collection of Account objects */
     public void addAccount(String username, String password, String firstname, String lastName, int age, boolean isAdmin){
-        if( !(accounts.isEmpty() && !(findByUsername(username) == null))){ // if the list isn't empty and an Account with that name doesn't exist yet
+        if( !(accounts.isEmpty() && findByUsername(username) == null)){ // if the list isn't empty and an Account with that name doesn't exist yet
             accounts.add(new Account(firstname, lastName, username, password, age, isAdmin)); // creates a new Account and adds it to the list
         }
         else{
