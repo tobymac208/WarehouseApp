@@ -1,4 +1,4 @@
-package com.groupproject.nik.Model;
+package com.groupproject.group.Model;
 
 /*
  * Description: This class is for holding information of which aisle, shelf, and tier (level) an item is located

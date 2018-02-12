@@ -1,4 +1,4 @@
-package com.groupproject.nik.Model;
+package com.groupproject.group.Model;
 
 /*
  * Description: This class is for holding information on Account information for a user; name, password, age, and if they are an admin or not

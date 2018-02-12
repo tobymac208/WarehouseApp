@@ -1,4 +1,4 @@
-package com.groupproject.nik;
+package com.groupproject.group;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -60,7 +60,7 @@ public class Main extends Application {
 
         // Scene -- creates a scene and specifies its WIDTH and HEIGHT (these two constants can found at the top of this file, as a member variable)
         Scene mainScene = new Scene(layout, WIDTH, HEIGHT);
-        mainScene.getStylesheets().add("/com/groupproject/nik/Resources/master.css");
+        mainScene.getStylesheets().add("/com/groupproject/group/Resources/master.css");
 
         // Main stage options
         // set the window's title

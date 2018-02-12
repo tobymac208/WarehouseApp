@@ -1,4 +1,4 @@
-package com.groupproject.nik.Model;
+package com.groupproject.group.Model;
 
 /*
  * Description: This is a class for holding multiple accounts at a time

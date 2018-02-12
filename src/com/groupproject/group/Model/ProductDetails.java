@@ -1,4 +1,4 @@
-package com.groupproject.nik.Model;
+package com.groupproject.group.Model;
 
 /*
  * Description: This class is for holding information on a product; name, weight, price, description, volume, and even location
