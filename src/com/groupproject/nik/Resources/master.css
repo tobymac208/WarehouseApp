@@ -1,6 +1,9 @@
-.root{
-    -fx-background-color: #7CAFC2; /* Sets the color of all of the windows' backgrounds */
+.root{ /* this style class is for every window */
+    -fx-background-color: #383838; /* Sets the color of all of the windows' backgrounds */
 }
-.label{
-    -fx-text-fill: #DC9656;
+.label{ /* this style class is for every label in any scene with this stylesheet */
+    -fx-text-fill: #DC9656; /* Sets all of the text color for labels */
+}
+.button{ /* this style class is for every generic button */
+    -fx-text-fill: #A1B56C;
 }
