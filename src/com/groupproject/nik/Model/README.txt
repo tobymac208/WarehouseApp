@@ -1,4 +1,4 @@
 This folder is for models such as:
-Products
+ProductDetails
 Accounts
 Inventory Lists
