@@ -1,0 +1,6 @@
+.root{
+    -fx-background-color: #7CAFC2; /* Sets the color of all of the windows' backgrounds */
+}
+.label{
+    -fx-text-fill: #DC9656;
+}
