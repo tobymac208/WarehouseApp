@@ -1,5 +1,6 @@
 package com.groupproject.group;
 
+import com.groupproject.group.Model.AccountsList;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
@@ -19,9 +20,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
     // Change these values to change the window's values
-    private String windowTitle = "Login";
+    private static String windowTitle = "Login";
     private final double WIDTH = 600; // sets the window's width
     private final double HEIGHT = 400; // sets the window's height
+    // Create a collection of accounts
+    private static AccountsList accountsList; // this will allow easier use of accounts when adding and deleting
 
     public static void main(String[] args) {
         launch(args);
