@@ -5,7 +5,7 @@ package com.groupproject.group.Model;
  * Created: 02/11/2018
  */
 
-public class ProductDetails {
+public class Product {
     private String name;
     private double weight; // we'll have to decide what unit this is measured in
     private double price;
@@ -13,7 +13,7 @@ public class ProductDetails {
     private Volume volume;
     private Location location;
 
-    public ProductDetails(String name, double weight, int price, String description, Volume volume, Location location){
+    public Product(String name, double weight, int price, String description, Volume volume, Location location){
         this.name = name;
         this.weight = weight;
         this.price = price;
