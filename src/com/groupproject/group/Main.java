@@ -50,7 +50,7 @@ public class Main extends Application {
         BorderPane layout = new BorderPane();
         // CENTER
         GridPane centerLayout = new GridPane();
-        centerLayout.setAlignment(Pos.CENTER);
+        centerLayout.setAlignment(Pos.CENTER); // SETS WHERE THE LOGIN OPTIONS ARE ALIGNED ON THE SCREEN
         centerLayout.setHgap(10); // sets the horizontal gap
         centerLayout.setVgap(10); // sets the vertical gap
         GridPane.setConstraints(usernameLabel, 0, 0); // first row, first column

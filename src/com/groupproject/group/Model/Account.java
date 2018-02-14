@@ -12,6 +12,7 @@ public class Account {
     private String password;
     private int age;
     private boolean isAdmin; // specifies if the user has admin access
+    // TODO: Add tiers (lower-level and mid-level)
 
     public Account(String firstName, String lastName, String username, String password, int age, boolean isAdmin){
         this.firstName = firstName;

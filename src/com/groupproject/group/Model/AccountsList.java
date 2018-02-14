@@ -9,6 +9,10 @@ import java.util.ArrayList;
 
 public class AccountsList {
     private ArrayList<Account> accounts;
+    // A variable for tracking how man accounts their are
+    private static int numberAccounts = 0;
+    // A variable to set the maximum number of accounts
+    private static final int MAX_ACCOUNTS = 10;
 
     public AccountsList() {
         this.accounts = new ArrayList<>();
@@ -21,7 +25,9 @@ public class AccountsList {
 
     /** Allows someone to add to this collection of Account objects */
     public void addAccount(String username, String password, String firstname, String lastName, int age, boolean isAdmin){
-        if( !(accounts.isEmpty() && findByUsername(username) == null)){ // if the list isn't empty and an Account with that name doesn't exist yet
+        if( !(accounts.isEmpty()) && findByUsername(username) == null  && (numberAccounts != MAX_ACCOUNTS) ){ // if the list isn't empty and an Account with that name doesn't exist yet, and the MAX hasn't been reached
+            // add 1 to the numberOfAccounts
+            numberAccounts++;
             accounts.add(new Account(firstname, lastName, username, password, age, isAdmin)); // creates a new Account and adds it to the list
         }
         else{
