@@ -48,6 +48,10 @@ public class Main extends Application {
         // Events -- the place to add new functionality when the user clicks an object
         stage.setOnCloseRequest(event -> stage.close()); // tells the window to close completely when you hit the X (quit) button
         // TODO: Hook up functionality for logging in :: Required component: An account Model for holding user info
+        login.setOnAction(event -> {
+            // open window for displaying settings
+            System.out.println("Functionality needs to be created for this to work.");
+        });
 
         // Layout -- the place to put all of the objects
         BorderPane layout = new BorderPane();
