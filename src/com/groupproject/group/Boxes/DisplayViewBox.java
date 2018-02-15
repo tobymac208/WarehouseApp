@@ -24,9 +24,9 @@ public class DisplayViewBox {
 
         /* Add labels to the list view */
         ListView<String> labelListView = new ListView<>();
-        // run a loop to populate the listView
-        for(int i = 0, numberOfLabels = labels.size(); i < numberOfLabels; i++){ // gets the number of items passed in, iterating through each and sticking them in the listView
-            labelListView.getItems().add(labels.get(i)); // get the string at the current location, and add it to the list view
+        // run a for-each loop to populate the listView
+        for(String currentString : labels){ // adds the current string to the listView
+            labelListView.getItems().add(currentString);
         }
 
         // Events
