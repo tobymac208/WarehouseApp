@@ -46,9 +46,11 @@ public class Main extends Application {
         // Username objects
         Label usernameLabel = new Label("Username:");
         TextField usernameField = new TextField();
+        usernameField.setPromptText("Enter username");
         // Password objects
         Label passwordLabel = new Label("Password:");
         PasswordField passwordField = new PasswordField();
+        passwordField.setPromptText("Enter password");
         // Submit button
         Button login = new Button("Login");
 
