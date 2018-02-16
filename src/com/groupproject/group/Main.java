@@ -17,7 +17,8 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 /*
- * Authors: Nik, Scott, Joe
+ * TODO: Enter the preferred name for what you want as your display name on here to be -- mine is my username for GitHub
+ * Authors: Tobymac208, Joe, Scott
  * Date created: 02/11/2018
  * Description:
  */
