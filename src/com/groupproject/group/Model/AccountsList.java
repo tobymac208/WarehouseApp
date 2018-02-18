@@ -35,6 +35,12 @@ public class AccountsList {
         }
     }
 
+    /** Allows someone to add to this collection of Account objects */
+    public void addAccount(Account newAccount){
+        // simply passes all fields from newAccount to the other method
+        addAccount(newAccount.getUsername(), newAccount.getPassword(), newAccount.getFirstName(), newAccount.getLastName(), newAccount.getAge(), newAccount.isAdmin(), newAccount.getTier());
+    }
+
     /** A method that checks if there are any users with that username yet, if there are return nothing */
     private Account findByUsername(String username){
         if(accounts.isEmpty()) // there is nothing in the list yet

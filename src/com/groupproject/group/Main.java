@@ -36,6 +36,9 @@ public class Main extends Application {
     }
 
     public void start(Stage stage){
+        // Add items to the accounts list
+        accountsList.addAccount();
+
         // Objects for the scene
         // TODO: Place objects here
         // NOTE: All objects placed here are for a skeleton setup, and should be modified for a better user experience
