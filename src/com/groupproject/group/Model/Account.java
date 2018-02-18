@@ -14,8 +14,8 @@ public class Account {
     private boolean isAdmin; // specifies if the user has admin access -- is immutable
     // TODO: Add tiers (lower-level and mid-level)
     private int tier; // is immutable -- can't change after object is created
-    // enum for deciding with tier to use -- public to allow a user to choose when creating the object of Account
-    public enum TIER{FIRST_LEVEL, SECOND_LEVEL}; // allows the user to choose from either tier
+    // values for deciding with tier to use -- public to allow a user to choose when creating the object of Account
+    public static final int FIRST_LEVEL = 1, SECOND_LEVEL = 2;
 
     public Account(String firstName, String lastName, String username, String password, int age, boolean isAdmin, int tier){
         this.firstName = firstName;
