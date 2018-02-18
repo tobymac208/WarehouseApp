@@ -22,10 +22,9 @@ public class AccountsList {
     public ArrayList<Account> getAccounts() {return accounts;}
 
     // Methods
-
     /** Allows someone to add to this collection of Account objects */
     public void addAccount(String username, String password, String firstname, String lastName, int age, boolean isAdmin, int tier){
-        if( !(accounts.isEmpty()) && findByUsername(username) == null  && (numberAccounts != MAX_ACCOUNTS) ){ // if the list isn't empty and an Account with that name doesn't exist yet, and the MAX hasn't been reached
+        if( findByUsername(username) == null  && (numberAccounts != MAX_ACCOUNTS) ){ // if the list isn't empty and an Account with that name doesn't exist yet, and the MAX hasn't been reached
             // add 1 to the numberOfAccounts
             numberAccounts++;
             accounts.add(new Account(firstname, lastName, username, password, age, isAdmin, tier)); // creates a new Account and adds it to the list

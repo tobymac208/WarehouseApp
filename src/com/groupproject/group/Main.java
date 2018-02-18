@@ -37,14 +37,12 @@ public class Main extends Application {
     }
 
     public void start(Stage stage){
+        accountsList = new AccountsList();
         // Add items to the accounts list
         accountsList.addAccount(new Account("Mike", "Johnson", "mike_account", "mikes123", 22, false, Account.FIRST_LEVEL));
         accountsList.addAccount(new Account("root", "root", "root", "password", 1000, true, Account.FIRST_LEVEL));
 
         // Objects for the scene
-        // TODO: Place objects here
-        // NOTE: All objects placed here are for a skeleton setup, and should be modified for a better user experience
-
         // TOP objects
         Button about = new Button("About"); // about button
 
