@@ -47,17 +47,21 @@ public class LoggedInBoxes {
 
         /* Layouts */
         // TOP layout
-        HBox topLayout = new HBox(20);
+        HBox topLayout = new HBox(150);
         topLayout.getChildren().addAll(logoutButton, inventory);
+        topLayout.getStyleClass().add("styled-box");
+        topLayout.setAlignment(Pos.CENTER);
         // CENTER layout
         VBox centerLayout = new VBox(20);
         // center the layout in the center of the screen
         centerLayout.setAlignment(Pos.CENTER);
+        centerLayout.getStyleClass().add("styled-box");
         // add objects to CENTER
         centerLayout.getChildren().add(displayArea);
         // LEFT layout -- admin layout
         VBox leftLayout = new VBox(20);
         leftLayout.setAlignment(Pos.CENTER);
+        leftLayout.getStyleClass().add("styled-box");
         if(account.getTier() == 1){ // if the account is an admin
             // add the objects to the layout
             leftLayout.getChildren().addAll(titleLabel, addAccountButton, deleteAccount);

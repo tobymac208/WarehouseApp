@@ -1,16 +1,21 @@
 .root{ /* this style class is for every window */
-    -fx-background-color: #383838; /* Sets the color of all of the windows' backgrounds */
+    -fx-background-color: #86C1B9; /* Sets the color of all of the windows' backgrounds */
     -fx-font-size: 15px;
 }
 .label{ /* this style class is for every label in any scene with this stylesheet */
-    -fx-text-fill: #DC9656; /* Sets all of the text color for labels */
+    -fx-text-fill: #AB4642; /* Sets all of the text color for labels */
 }
 .button{ /* this style class is for every generic button */
-    -fx-text-fill: #A1B56C;
+    -fx-text-fill: #BA8BAF;
 }
 .text-area{ /* this style class is for any objects that are TextAreas */
     -fx-background-color: #86C1B9;
 }
 .text-area .content{ /* changes the display settings for items inside a TextArea */
-    -fx-background-color: #86C1B9;
+    -fx-background-color: #DC9656;
+}
+.styled-box { /* these styles are applied to all nodes with the attached class of "styled-box" */
+    -fx-border-color: #585858;
+    -fx-border-style: solid;
+    -fx-border-width: 2px;
 }
