@@ -11,7 +11,6 @@ public class Account {
     private String username;
     private String password;
     private int age;
-    // TODO: Add tiers (lower-level and mid-level)
     private int tier; // is immutable -- can't change after object is created
     // values for deciding with tier to use -- public to allow a user to choose when creating the object of Account
     public static final int ADMIN_LEVEL = 1, FIRST_LEVEL = 2, SECOND_LEVEL = 3;

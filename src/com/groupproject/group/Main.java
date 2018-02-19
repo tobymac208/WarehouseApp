@@ -62,9 +62,7 @@ public class Main extends Application {
 
         // Events -- the place to add new functionality when the user clicks an object
         stage.setOnCloseRequest(event -> stage.close()); // tells the window to close completely when you hit the X (quit) button
-        // TODO: Hook up functionality for logging in :: Required component: An account Model for holding user info
         login.setOnAction(event -> {
-            // TODO: Complete login functionality
             // Check what's in the username field and password field
             if( !(usernameField.getText().equals("")) || !(passwordField.getText().equals("")) ){ // if the fields are not empty
                 Account checkerAccount = accountsList.findByUsername(usernameField.getText());
