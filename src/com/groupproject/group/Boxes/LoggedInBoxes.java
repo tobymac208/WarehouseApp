@@ -3,6 +3,8 @@ package com.groupproject.group.Boxes;
 import com.groupproject.group.Model.Account;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
@@ -21,6 +23,10 @@ public class LoggedInBoxes {
         Stage window = new Stage();
 
         // Objects
+        // TOP
+        Button logoutButton = new Button("Logout"); // logs out the user
+        Button inventory = new Button("Inventory"); // opens the inventory menu
+        // CENTER
         TextArea displayArea = new TextArea();
         displayArea.setEditable(false); // don't let the user edit the text area
         displayArea.setText("ACCOUNT DETAILS\n----------------------------------------------------------\n" +
@@ -29,6 +35,11 @@ public class LoggedInBoxes {
                 "Last name: " + account.getLastName() + "\n" +
                 "Age: " + account.getAge() + "\n" +
                 "Tier: " + account.getTier() + "\n");
+        // LEFT -- ONLY shows for admins
+        Label titleLabel = new Label("Administrator Options:");
+        Button addAccountButton = new Button("Create a new account");
+        Button deleteAccount = new Button("Delete Account");
+
 
         /* Layouts */
         // CENTER layout
