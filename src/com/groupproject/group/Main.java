@@ -1,6 +1,7 @@
 package com.groupproject.group;
 
 import com.groupproject.group.Boxes.DisplayViewBox;
+import com.groupproject.group.Boxes.LoggedInBoxes;
 import com.groupproject.group.Model.Account;
 import com.groupproject.group.Model.AccountsList;
 import javafx.application.Application;
@@ -70,7 +71,10 @@ public class Main extends Application {
                     // check if the password matches
                     if(checkerAccount.getPassword().equals(passwordField.getText())){
                         // open window for displaying settings
-                        System.out.println("Account logged in!");
+                        errorLabel.setStyle("-fx-text-fill: green");
+                        errorLabel.setText("Account logged in.");
+                        LoggedInBoxes.displaySettings(checkerAccount);
+                        // after this method returns, update account that was possibly changed
                     } else{ // no password found
                         // display an error message
                         errorLabel.setStyle("-fx-text-fill: red");

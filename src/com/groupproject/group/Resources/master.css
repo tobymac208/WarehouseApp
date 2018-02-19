@@ -1,5 +1,6 @@
 .root{ /* this style class is for every window */
     -fx-background-color: #383838; /* Sets the color of all of the windows' backgrounds */
+    -fx-font-size: 15px;
 }
 .label{ /* this style class is for every label in any scene with this stylesheet */
     -fx-text-fill: #DC9656; /* Sets all of the text color for labels */
