@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -42,10 +43,16 @@ public class Main extends Application {
 
     /* Author Nik */
     public void start(Stage stage){
-        accountsList = new AccountsList();
-        // Add items to the accounts list
-        accountsList.addAccount(new Account("root", "root", "root", "password", 1000, Account.ADMIN_LEVEL));
-        accountsList.addAccount(new Account("Mike", "Johnson", "mike_account", "mikes123", 22, Account.FIRST_LEVEL));
+        // Read in the account data from the file if it exists -- this try-catch works like a conditional statement
+        try{
+            boolean doesExist = loadInAccounts().getAccounts().get(0) != null; // might trigger an exception throw
+            accountsList = loadInAccounts();
+        }catch (Exception e){ // there was nothing to read, or the file doesn't exist
+            accountsList = new AccountsList();
+            // Add items to the accounts list
+            accountsList.addAccount(new Account("root", "root", "root", "password", 1000, Account.ADMIN_LEVEL));
+            accountsList.addAccount(new Account("Mike", "Johnson", "mike_account", "mikes123", 22, Account.FIRST_LEVEL));
+        }
 
         // Objects for the scene
         // TOP objects
@@ -143,22 +150,37 @@ public class Main extends Application {
     private static AccountsList loadInAccounts(){
         // An accounts list to populate
         AccountsList list = new AccountsList();
-        File file = new File("/com/groupproject/group/Resources/login-data.txt");
+        File file = new File("src/com/groupproject/group/Resources/login-data.txt");
         // A scanner to read in data from the login-data.txt file
         try { // exception handling, in case of the file not being found
             Scanner fileReader = new Scanner(file);
             while(fileReader.hasNextLine()){ // check if there is still a line to read
                 String currentLine = fileReader.nextLine(); // reads in the current line, stores it in the variable
+                if(currentLine.equals("")){ // if the current line is empty\
+                    break; // exit the loop
+                }
                 // split the string into multiple parts
                 String[] parts = currentLine.split(", "); // reads in every element split by a comma-space combination
                 String firstName, lastName, username, password; // creates strings to use for storing each member variable
-                for(int i = 0, length = parts.length; i < length; i++){ // a loop that runs through each member variable of the current account and initializes them to what was read in
-
+                int age = 0, tier = 3; // creates ints to user for age and tier -- sets the tier to tier 3 by default
+                // read in in this order: firstName, lastName, username, password, age, tier level
+                firstName = parts[0];
+                lastName = parts[1];
+                username = parts[2];
+                password = parts[3];
+                try{ // exception handling for parsing integers
+                    age = Integer.parseInt(parts[4]);
+                    tier = Integer.parseInt(parts[5]);
+                }catch(NumberFormatException e){
+                    System.out.println("Did not read the age/tier properly. Check login-data file.");
                 }
+                // add the data to the Account list as an Account object
+                list.addAccount(username, password, firstName, lastName, age, tier);
             }
         }catch(FileNotFoundException e){
             System.out.println("File not found!");
         }
-        return list;
+
+        return list; // returns the list to the caller
     }
 }
