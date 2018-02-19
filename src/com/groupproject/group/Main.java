@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.lang.reflect.InvocationTargetException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -46,7 +46,7 @@ public class Main extends Application {
         // Read in the account data from the file if it exists -- this try-catch works like a conditional statement
         try{
             boolean doesExist = loadInAccounts().getAccounts().get(0) != null; // might trigger an exception throw
-            accountsList = loadInAccounts();
+            accountsList = loadInAccounts(); // if the exception wasn't triggered, initialize the list to whatever loadInAccounts() returns
         }catch (Exception e){ // there was nothing to read, or the file doesn't exist
             accountsList = new AccountsList();
             // Add items to the accounts list
@@ -156,7 +156,7 @@ public class Main extends Application {
             Scanner fileReader = new Scanner(file);
             while(fileReader.hasNextLine()){ // check if there is still a line to read
                 String currentLine = fileReader.nextLine(); // reads in the current line, stores it in the variable
-                if(currentLine.equals("")){ // if the current line is empty\
+                if(currentLine.equals("")){ // if the current line is empty
                     break; // exit the loop
                 }
                 // split the string into multiple parts
@@ -183,4 +183,16 @@ public class Main extends Application {
 
         return list; // returns the list to the caller
     }
+    /** Method that prints out all the items in the accounts list object to the login-data.txt file
+     * Author: Nik */
+    private static void printToFile(){
+        try(PrintWriter writer = new PrintWriter(new File("src/com/groupproject/group/Resources/login-data.txt"))){
+            for(Account account : accountsList.getAccounts()){ // for each account in accounts list's accounts
+                // format "firstname, lastname, username, password, age, tier" and then a newline
+                writer.printf("%s, %s, %s, %s, %d, %d%n", account.getFirstName(), account.getLastName(), account.getUsername(), account.getPassword(), account.getAge(), account.getTier());
+            }
+        }catch (FileNotFoundException e){
+            System.out.println("File not found!");
+        }
+    } // end of printToFile()
 }
