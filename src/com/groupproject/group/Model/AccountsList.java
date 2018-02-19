@@ -23,11 +23,11 @@ public class AccountsList {
 
     // Methods
     /** Allows someone to add to this collection of Account objects */
-    public void addAccount(String username, String password, String firstname, String lastName, int age, boolean isAdmin, int tier){
+    public void addAccount(String username, String password, String firstname, String lastName, int age, int tier){
         if( findByUsername(username) == null  && (numberAccounts != MAX_ACCOUNTS) ){ // if the list isn't empty and an Account with that name doesn't exist yet, and the MAX hasn't been reached
             // add 1 to the numberOfAccounts
             numberAccounts++;
-            accounts.add(new Account(firstname, lastName, username, password, age, isAdmin, tier)); // creates a new Account and adds it to the list
+            accounts.add(new Account(firstname, lastName, username, password, age, tier)); // creates a new Account and adds it to the list
         }
         else{
             System.out.println("Account couldn't be created!");
@@ -37,7 +37,7 @@ public class AccountsList {
     /** Allows someone to add to this collection of Account objects */
     public void addAccount(Account newAccount){
         // simply passes all fields from newAccount to the other method
-        addAccount(newAccount.getUsername(), newAccount.getPassword(), newAccount.getFirstName(), newAccount.getLastName(), newAccount.getAge(), newAccount.isAdmin(), newAccount.getTier());
+        addAccount(newAccount.getUsername(), newAccount.getPassword(), newAccount.getFirstName(), newAccount.getLastName(), newAccount.getAge(), newAccount.getTier());
     }
 
     /** A method that checks if there are any users with that username yet, if there are return nothing */

@@ -39,8 +39,8 @@ public class Main extends Application {
     public void start(Stage stage){
         accountsList = new AccountsList();
         // Add items to the accounts list
-        accountsList.addAccount(new Account("Mike", "Johnson", "mike_account", "mikes123", 22, false, Account.FIRST_LEVEL));
-        accountsList.addAccount(new Account("root", "root", "root", "password", 1000, true, Account.FIRST_LEVEL));
+        accountsList.addAccount(new Account("root", "root", "root", "password", 1000, Account.ADMIN_LEVEL));
+        accountsList.addAccount(new Account("Mike", "Johnson", "mike_account", "mikes123", 22, Account.FIRST_LEVEL));
 
         // Objects for the scene
         // TOP objects
@@ -57,6 +57,8 @@ public class Main extends Application {
         passwordField.setPromptText("Enter password");
         // Submit button
         Button login = new Button("Login");
+        // Error label
+        Label errorLabel = new Label("");
 
         // Events -- the place to add new functionality when the user clicks an object
         stage.setOnCloseRequest(event -> stage.close()); // tells the window to close completely when you hit the X (quit) button
@@ -64,17 +66,27 @@ public class Main extends Application {
         login.setOnAction(event -> {
             // TODO: Complete login functionality
             // Check what's in the username field and password field
-            if( !(usernameField.getText().equals(""))){ // if the field is not empty
+            if( !(usernameField.getText().equals("")) || !(passwordField.getText().equals("")) ){ // if the fields are not empty
                 Account checkerAccount = accountsList.findByUsername(usernameField.getText());
                 if(checkerAccount != null){ // if an account was found
                     // check if the password matches
                     if(checkerAccount.getPassword().equals(passwordField.getText())){
                         // open window for displaying settings
                         System.out.println("Account logged in!");
+                    } else{ // no password found
+                        // display an error message
+                        errorLabel.setStyle("-fx-text-fill: red");
+                        errorLabel.setText("Incorrect password.");
                     }
-                }else{
+                }else{ // no username found
                     // display an error message
+                    errorLabel.setStyle("-fx-text-fill: red");
+                    errorLabel.setText("Username not found.");
                 }
+            }else{
+                // display an error message
+                errorLabel.setStyle("-fx-text-fill: red");
+                errorLabel.setText("You must enter text into both fields.");
             }
         });
         about.setOnAction(event -> {
@@ -102,7 +114,8 @@ public class Main extends Application {
         GridPane.setConstraints(passwordLabel, 0, 1); // second row, first column
         GridPane.setConstraints(passwordField, 1, 1); // second row, second column
         GridPane.setConstraints(login, 0, 2); // third row, first column
-        centerLayout.getChildren().setAll(usernameField, usernameLabel, passwordField, passwordLabel, login); // adds all of the objects to the GridPane
+        GridPane.setConstraints(errorLabel, 0, 3);
+        centerLayout.getChildren().setAll(usernameField, usernameLabel, passwordField, passwordLabel, login, errorLabel); // adds all of the objects to the GridPane
         // Add the layouts to the main BorderPane layout
         layout.setTop(topLayout); // adds the TOP layout to the BorderPane
         layout.setCenter(centerLayout); // adds the CENTER layout to the BorderPane

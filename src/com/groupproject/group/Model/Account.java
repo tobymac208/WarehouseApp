@@ -14,7 +14,7 @@ public class Account {
     // TODO: Add tiers (lower-level and mid-level)
     private int tier; // is immutable -- can't change after object is created
     // values for deciding with tier to use -- public to allow a user to choose when creating the object of Account
-    public static final int ADMIN_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
+    public static final int ADMIN_LEVEL = 1, FIRST_LEVEL = 2, SECOND_LEVEL = 3;
 
     public Account(String firstName, String lastName, String username, String password, int age, int tier){
         this.firstName = firstName;
