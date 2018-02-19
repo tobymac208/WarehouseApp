@@ -41,7 +41,7 @@ public class AccountsList {
     }
 
     /** A method that checks if there are any users with that username yet, if there are return nothing */
-    private Account findByUsername(String username){
+    public Account findByUsername(String username){
         if(accounts.isEmpty()) // there is nothing in the list yet
             return null; // return null
         for(Account account : accounts){ // for-each loop that will go through each Account object and check their name

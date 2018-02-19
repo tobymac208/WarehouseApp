@@ -11,19 +11,17 @@ public class Account {
     private String username;
     private String password;
     private int age;
-    private boolean isAdmin; // specifies if the user has admin access -- is immutable
     // TODO: Add tiers (lower-level and mid-level)
     private int tier; // is immutable -- can't change after object is created
     // values for deciding with tier to use -- public to allow a user to choose when creating the object of Account
-    public static final int FIRST_LEVEL = 1, SECOND_LEVEL = 2;
+    public static final int ADMIN_LEVEL = 1, SECOND_LEVEL = 2, THIRD_LEVEL = 3;
 
-    public Account(String firstName, String lastName, String username, String password, int age, boolean isAdmin, int tier){
+    public Account(String firstName, String lastName, String username, String password, int age, int tier){
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
         this.age = age;
-        this.isAdmin = isAdmin;
         this.tier = tier;
     }
 
@@ -47,9 +45,6 @@ public class Account {
     public int getAge() {return age;}
     public void setAge(int age) {this.age = age;}
 
-    // isAdmin
-    public boolean isAdmin() {return isAdmin;}
-
     // tier
     public int getTier(){return tier;}
 
@@ -59,7 +54,6 @@ public class Account {
         return "Name: " + firstName + " " + lastName + "\n"
                 + "Username: " + username + "\n"
                 + "Age: " + age + "\n"
-                + "Is admin? " + isAdmin + "\n"
                 + "Which tier? " + tier + "\n";
     }
 }

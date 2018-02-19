@@ -62,8 +62,20 @@ public class Main extends Application {
         stage.setOnCloseRequest(event -> stage.close()); // tells the window to close completely when you hit the X (quit) button
         // TODO: Hook up functionality for logging in :: Required component: An account Model for holding user info
         login.setOnAction(event -> {
-            // open window for displaying settings
-            System.out.println("Functionality needs to be created for this to work.");
+            // TODO: Complete login functionality
+            // Check what's in the username field and password field
+            if( !(usernameField.getText().equals(""))){ // if the field is not empty
+                Account checkerAccount = accountsList.findByUsername(usernameField.getText());
+                if(checkerAccount != null){ // if an account was found
+                    // check if the password matches
+                    if(checkerAccount.getPassword().equals(passwordField.getText())){
+                        // open window for displaying settings
+                        System.out.println("Account logged in!");
+                    }
+                }else{
+                    // display an error message
+                }
+            }
         });
         about.setOnAction(event -> {
             ArrayList<String> labels = new ArrayList<>(), information = new ArrayList<>(); // creates and initializes two new ArrayList objects
