@@ -1,1 +1,2 @@
 rootFirstName, rootLastName, root, password, 25, 1
+guest1, guest1, guest, password, 0, 3

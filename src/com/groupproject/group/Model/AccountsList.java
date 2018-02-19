@@ -15,8 +15,8 @@ public class AccountsList {
     // A variable to set the maximum number of accounts
     private static final int MAX_ACCOUNTS = 10;
     private static final int MAX_ADMINS = 1;
-    private static final int MAX_TIER_TWO = 4;
-    private static final int MAX_TIER_THREE = 5;
+    private static final int MAX_TIER_ONE = 4;
+    private static final int MAX_TIER_TWO = 5;
 
     public AccountsList() {
         this.accounts = new ArrayList<>();
@@ -30,7 +30,7 @@ public class AccountsList {
     public void addAccount(String username, String password, String firstname, String lastName, int age, int tier){
         if( findByUsername(username) == null  && (numberAccounts != MAX_ACCOUNTS) ){ // if the list isn't empty and an Account with that name doesn't exist yet, and the MAX hasn't been reached
             // checks which tier and sees if the max has been reached
-            if( (((tier == 1) && (findByTier(tier) < MAX_ADMINS))) || (((tier == 2) && (findByTier(tier) < MAX_TIER_TWO))) || (((tier == 3) && (findByTier(tier) < MAX_TIER_THREE))) ){ // if not maxes have been reached, create account
+            if( (((tier == 1) && (findByTier(tier) < MAX_ADMINS))) || (((tier == 2) && (findByTier(tier) < MAX_TIER_ONE))) || (((tier == 3) && (findByTier(tier) < MAX_TIER_TWO))) ){ // if no maxes have been reached, create account
                 numberAccounts++;
                 accounts.add(new Account(firstname, lastName, username, password, age, tier));
             }
@@ -74,13 +74,13 @@ public class AccountsList {
         else if(tier  == 2){
             for (Account account : accounts){
                 if(account.getTier() == 2)
-                    numberOfAccounts++; // add 1 to the number of accounts count for tier two workers
+                    numberOfAccounts++; // add 1 to the number of accounts count for tier one workers
             } // end of for
         } // end of else-if
         else if(tier == 3){
             for (Account account : accounts){
                 if (account.getTier() == 3)
-                    numberOfAccounts++; // add 1 to the number of accounts count for tier three workers
+                    numberOfAccounts++; // add 1 to the number of accounts count for tier two workers
             }
         }
         // return the count

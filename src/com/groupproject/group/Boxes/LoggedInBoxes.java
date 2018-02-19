@@ -1,12 +1,14 @@
 package com.groupproject.group.Boxes;
 
 import com.groupproject.group.Model.Account;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -40,17 +42,41 @@ public class LoggedInBoxes {
         Button addAccountButton = new Button("Create a new account");
         Button deleteAccount = new Button("Delete Account");
 
+        // Events
+        logoutButton.setOnAction(event -> window.close()); // closes this window
 
         /* Layouts */
+        // TOP layout
+        HBox topLayout = new HBox(20);
+        topLayout.getChildren().addAll(logoutButton, inventory);
         // CENTER layout
         VBox centerLayout = new VBox(20);
         // center the layout in the center of the screen
         centerLayout.setAlignment(Pos.CENTER);
         // add objects to CENTER
         centerLayout.getChildren().add(displayArea);
+        // LEFT layout -- admin layout
+        VBox leftLayout = new VBox(20);
+        leftLayout.setAlignment(Pos.CENTER);
+        if(account.getTier() == 1){ // if the account is an admin
+            // add the objects to the layout
+            leftLayout.getChildren().addAll(titleLabel, addAccountButton, deleteAccount);
+        }
         // MAIN layout
+        Insets marginSize = new Insets(40);
         BorderPane mainLayout = new BorderPane();
+        // set margins for each node -- spacing between each layout
+        BorderPane.setMargin(topLayout, marginSize);
+        BorderPane.setMargin(centerLayout, marginSize);
+        BorderPane.setMargin(leftLayout, marginSize);
+        // set the TOP layout
+        mainLayout.setTop(topLayout);
+        // set the center layout
         mainLayout.setCenter(centerLayout);
+        if(account.getTier() == 1) { // if account is admin
+            // set the left layout
+            mainLayout.setLeft(leftLayout);
+        }
 
         // Scene
         Scene mainScene = new Scene(mainLayout, 600, 400);
