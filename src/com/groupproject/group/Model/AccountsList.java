@@ -3,6 +3,7 @@ package com.groupproject.group.Model;
 /*
  * Description: This is a class for holding multiple accounts at a time
  * Created: 02/11/2018
+ * Author: Nik
  */
 
 import java.util.ArrayList;

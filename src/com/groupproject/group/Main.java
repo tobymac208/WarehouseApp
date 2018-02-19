@@ -16,13 +16,16 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /*
- * TODO: Enter the preferred name for what you want as your display name on here to be -- mine is my username for GitHub
- * Authors: Tobymac208, Joe, Scott
+ * Authors: Nik, Joe, Scott
  * Date created: 02/11/2018
- * Description:
+ * Description: This program allows a user with an account to manage day-to-day operations of a warehouse
+ * Author of this class: Nik
  */
 
 public class Main extends Application {
@@ -37,6 +40,7 @@ public class Main extends Application {
         launch(args);
     }
 
+    /* Author Nik */
     public void start(Stage stage){
         accountsList = new AccountsList();
         // Add items to the accounts list
@@ -132,5 +136,29 @@ public class Main extends Application {
         // set the scene
         stage.setScene(mainScene);
         stage.show();
+    }
+
+    /** Method that reads in from the login-data file
+     * Author: Nik */
+    private static AccountsList loadInAccounts(){
+        // An accounts list to populate
+        AccountsList list = new AccountsList();
+        File file = new File("/com/groupproject/group/Resources/login-data.txt");
+        // A scanner to read in data from the login-data.txt file
+        try { // exception handling, in case of the file not being found
+            Scanner fileReader = new Scanner(file);
+            while(fileReader.hasNextLine()){ // check if there is still a line to read
+                String currentLine = fileReader.nextLine(); // reads in the current line, stores it in the variable
+                // split the string into multiple parts
+                String[] parts = currentLine.split(", "); // reads in every element split by a comma-space combination
+                String firstName, lastName, username, password; // creates strings to use for storing each member variable
+                for(int i = 0, length = parts.length; i < length; i++){ // a loop that runs through each member variable of the current account and initializes them to what was read in
+
+                }
+            }
+        }catch(FileNotFoundException e){
+            System.out.println("File not found!");
+        }
+        return list;
     }
 }

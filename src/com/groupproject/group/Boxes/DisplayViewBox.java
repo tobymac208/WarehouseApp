@@ -13,6 +13,7 @@ import java.util.ArrayList;
 /*
  * Description: This class is a generic Box class for a allowing someone to see a list of information
  * Created: 02/15/2018
+ * Author: Nik
  */
 public class DisplayViewBox {
     private static String windowTitle;

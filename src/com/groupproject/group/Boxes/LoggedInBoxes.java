@@ -9,7 +9,12 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-/** This class contains static methods for displaying windows for when a user is logged in */
+/*
+ * Description: This class contains static methods for displaying windows for when a user is logged in
+ * Created: 02/18/2018
+ * Author: Nik
+ */
+
 public class LoggedInBoxes {
     /** Displays a settings window for an account that is passed in */
     public static void displaySettings(Account account){
