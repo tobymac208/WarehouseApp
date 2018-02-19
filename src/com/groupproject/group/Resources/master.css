@@ -8,3 +8,9 @@
 .button{ /* this style class is for every generic button */
     -fx-text-fill: #A1B56C;
 }
+.text-area{ /* this style class is for any objects that are TextAreas */
+    -fx-background-color: #86C1B9;
+}
+.text-area .content{ /* changes the display settings for items inside a TextArea */
+    -fx-background-color: #86C1B9;
+}
